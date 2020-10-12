@@ -1,0 +1,439 @@
+/* Imports */
+@import 'setup';
+@import 'mixins';
+@import 'colors';
+@import 'mediaQueries';
+
+
+/* Global */
+html {
+  font-size: 100%;
+  height: 100%;
+  background-color: $primary-background-color;
+}
+
+body {
+  color: $primary-text-color;
+  @include primary-font(calc(0.9rem + 0.9vw), 2.2, 0.12rem)
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 100px 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: 5px;
+  text-decoration: none;
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+
+h1 {
+  @include secondary-font(calc(1.9rem + 1.9vw), 2.8, calc(0.6rem + 0.6vw), 600);
+  color: $primary-color;
+}
+
+h2 {
+  @include secondary-font(calc(1.4rem + 1.4vw), 2.2, calc(0.25rem + 0.25vw), 500);
+  color: $primary-color;
+}
+
+h3 {
+  @include secondary-font(calc(1.7rem + 1.7vw), 2.2, calc(0.25rem + 0.25vw), 500);
+  color: $primary-color;
+}
+
+h4 {
+  @include secondary-font(calc(1.7rem + 1.7vw), 2.2, calc(0.25rem + 0.25vw), 500);
+  color: $primary-color;
+}
+
+
+/* Header*/
+header {
+  min-height: 100vh;
+  background-image: linear-gradient(to top rgba(0, 0, 0, 0.7),
+   rgba(0, 0, 0, 0.7)), url(../assets/banner.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-nav-list {
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    color: $primary-color;
+  }
+
+  li:last-child {
+    margin-left: 50px;
+  }
+}
+
+.header-description {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    color: $primary-text-color!important;
+  }
+}
+
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
+  cursor: pointer;
+
+  i {
+    color: $primary-color;
+    font-size: calc(1.7rem + 1.7vw);
+  }
+}
+
+
+/* About */
+.about {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    max-width: 600px;
+    text-align: center;
+  }
+}
+
+
+/* Main */
+.main {
+  // https://css-tricks.com/couple-takes-sticky-footer/
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  background-color: $secondary-background-color;
+}
+
+.main-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-img,
+.main-search {
+  padding: 10px;
+}
+
+.main-search {
+  margin-left: calc(4rem + 4vw);
+  width: 50%;
+}
+
+.main-content {
+  margin-bottom: 20px;
+
+  p {
+    text-align: center;
+  }
+
+  .main-content-steps {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+}
+
+
+/* Main Image */
+.main-img {
+  width: 50%;
+}
+
+
+/* Search Buttons */
+.search-buttons-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    @include secondary-font(calc(1.3rem + 1.3vw), 2.2, calc(0.25rem + 0.25vw))
+  }
+}
+
+.search-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 75px;
+
+  button {
+    @include primary-font(calc(.7rem + .7vw), 1.6, calc(0.05rem + 0.05vw));
+    color: $primary-text-color;
+    background-color: $primary-color;
+    border: 1px solid $warning-color;
+    text-align: center;
+    padding: 5px 10px;
+    width: 100%;
+
+    &:last-child {
+      margin-left: 15px;
+    }
+  }
+}
+
+
+/* Form */
+.invalid-input {
+  border: 1px solid $secondary-warning-color;
+  background-color: $secondary-warning-color;
+}
+
+form {
+  display: flex;
+}
+
+input {
+  @include primary-font(calc(0.8rem + 0.8vw), 1.6, calc(0.05rem + 0.05vw));
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-bottom: 1px solid $secondary-warning-color;
+  color: $primary-text-color!important;
+  background: transparent;
+  width: 60%;
+}
+
+input:focus,
+button:focus,
+.mobile-nav a:focus {
+  outline: 0.1px dotted $primary-color;
+}
+
+input:active {
+  background-color: $warning-color;
+  opacity: 0.4;
+}
+
+
+/* Buttons */
+.btn {
+  @include primary-font(calc(1rem + 1vw), 1.6, calc(0.05rem + 0.05vw));
+  color: $primary-text-color;
+  background-color: $primary-color;
+  border: 1px solid $warning-color;
+  margin-left: 5px;
+  text-align: center;
+  padding: 10px 20px;
+  width: 40%;
+}
+
+button:hover,
+button:focus {
+  opacity: 0.7;
+}
+
+
+/* Dynamically Added Recipe Container */
+.recipe-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 100px 0;
+
+  img {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .drink-title {
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 2rem;
+    transition: 0.2s;
+
+    &:hover,
+    &:focus {
+    transform: scale(1.1);
+    }
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .recipe-details {
+    background-color: $primary-background-color;
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 2rem;
+    border: none;
+  }
+}
+
+
+/* Footer */
+footer {
+  height: 100%;
+  background-color: $primary-background-color;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 0px;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    margin: 5px;
+  }
+}
+
+.footer-nav-list a {
+  color: $primary-color;
+  font-size: calc(0.9rem + 0.9vw);
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 40px;
+  text-align: center;
+
+  span,
+  a {
+    font-size: calc(0.7rem + 0.7vw);
+    color: $secondary-warning-color!important;
+  }
+}
+
+.juno-footer-link {
+  text-decoration: none;
+}
+
+
+/* Dynamic Modal */
+.ui-dialog-titlebar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.outer-modal {
+  background: $secondary-background-color;
+}
+
+.modal-content {
+  background: $primary-background-color;
+}
+
+.ui-button {
+  @include primary-font(calc(0.7rem + 0.7vw), 1.9, calc(0.05rem + 0.05vw));
+  color: $primary-text-color;
+  background-color: $primary-color;
+  border: none;
+  padding: 10px 20px;
+  width: 20%;
+  text-transform: uppercase;
+}
+
+
+/* Modal Content Blocks */
+.recipe-container-media,
+.recipe-container-ingredients,
+.recipe-container-instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px 10px;
+}
+
+.recipe-img-container {
+  width: 70%;
+}
+
+.recipe-container-instructions p {
+  width: 80%;
+}
+
+
+/* jQuery ui classes needed for the modal */
+.ui-widget-overlay {
+  background: #aaaaaa url("images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x;
+  opacity: .3;
+  filter: Alpha(Opacity=30);
+}
+
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.ui-dialog {
+  z-index: 101;
+}

@@ -1,0 +1,36 @@
+// TO DO
+
+// Functionality
+ - Modal
+  - fix the draggable part - user should not be able to drag it
+  - fix the modal position on the page 
+
+// Clean Up
+  1. HTML
+    - ensure accessability is covered
+    - ensure that semantic elements are used
+  2. CSS
+  3. JS
+    - remove console.log statements and any unnecessary code
+
+
+// CSS
+1. Styleguide
+  - choose css fonts
+  - choose color scheme
+  - choose images
+  - choose icons (if needed)
+
+
+
+
+
+
+// GOALS
+
+// MVP Goals
+- Allow user to search recipes based on ingredient and display the matching recipes to the user
+
+// Stretch Goals
+- Once the recipe is displayed, the user can click an icon to save the recipe as a favorite. This will be added to an array that will be pushed to (localStorage). When the user refreshes the page, we will check localStorage for any saved data, parse it, and update the array with the saved drinks.
+- The saved recipes are then accessed by the nav link.

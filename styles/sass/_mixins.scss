@@ -1,0 +1,36 @@
+/* FONTS
+========================== */
+// Body - font-family: 'Raleway', sans-serif;
+// Headings - font-family: 'Ovo', serif;
+
+
+/* MIXINS
+========================== */
+
+@mixin primary-font(
+  $font-size,
+  $line-height,
+  $letter-spacing: normal,
+  $font-weight: 400,
+  )
+  {
+  font-family: 'Raleway', 'Times', 'Arial', sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weight;
+}
+
+@mixin secondary-font(
+  $font-size,
+  $line-height,
+  $letter-spacing: normal,
+  $font-weight: 400,
+)
+{
+  font-family: 'Ovo', 'Times', 'Arial', serif;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
